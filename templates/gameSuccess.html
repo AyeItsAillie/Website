@@ -1,0 +1,15 @@
+<!-- page that displays results once you've successfully
+entered them -->
+{% extends "base.html" %}
+{% block content %}
+<h2 class="success">Game Recommended Successfully!</h2>
+
+<div>
+<h3>Your Profile Information:</h3>
+<p><strong>Game Name:</strong> {{ game_name }}</p>
+<p><strong>Platform:</strong> {{ platform }}</p>
+<p><strong>Comments:</strong> {{ comments if comments else "Not provided" }}</p>
+<p><strong>Multiplayer Required:</strong> {{ "Yes" if multiplayer else "No" }}</p>
+</div>
+<a href="{{ url_for('game') }}">Create Another Profile</a>
+{% endblock %}
