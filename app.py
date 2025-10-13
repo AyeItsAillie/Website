@@ -71,3 +71,9 @@ def game():
 def admin_game():
     games = Game.query.all()
     return render_template('admin_profiles.html', games=games)
+
+@app.route('/admin/game/multiplayer')
+def admin_game_multiplayer():
+    games = Game.query.filter_by(multiplayer=True).all()
+    return render_template('admin_profiles.html', games=games)
+
