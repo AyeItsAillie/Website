@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %}{{super()}} - Games Admin {%
+endblock%} {% block content %}
+<h1>All Game Recommendations</h1>
+<table class="table table-striped" border="1">
+  <tr>
+    <th>ID</th>
+    <th>Game Name</th>
+    <th>Platform</th>
+    <th>Multiplayer</th>
+    <th>Comments</th>
+    <th>Created At</th>
+  </tr>
+  {% for game in games %}
+  <tr>
+    <td>{{ game.id }}</td>
+    <td>{{ game.game_name }}</td>
+    <td>{{ game.platform }}</td>
+    <td>{{ game.multiplayer }}</td>
+    <td>{{ game.comments }}</td>
+    <td>{{ game.created_at }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

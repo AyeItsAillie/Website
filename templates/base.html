@@ -5,6 +5,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    {% block content %}{% endblock %}
+<nav>
+<a href="{{ url_for('game') }}">Game Form</a> |
+<a href="{{ url_for('admin_game') }}">Submissions</a>
+</nav>
+<hr>
+{% block content %}{% endblock %}
 </body>
+
 </html>
