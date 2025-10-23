@@ -79,9 +79,9 @@ def admin_game_multiplayer():
     return render_template('admin_profiles.html', games=games)
 
 #only shows multiplayer games only on steam
-@app.route('/admin/game/multiplayer_and_steam')
-def admin_game_multiplayer_on_steam():
-    games = Game.query.filter_by(multiplayer=True, platform="Steam" or "steam").all()
-    return render_template('admin_profiles.html', games=games)
+#@app.route('/admin/game/multiplayer_and_steam')
+#def admin_game_multiplayer_on_steam():
+#    games = Game.query.filter_by(multiplayer=True, platform="Steam").all()
+#    return render_template('admin_profiles.html', games=games)
 
 
