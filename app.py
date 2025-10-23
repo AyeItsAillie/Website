@@ -78,6 +78,20 @@ def admin_game_multiplayer():
     games = Game.query.filter_by(multiplayer=True).all()
     return render_template('admin_profiles.html', games=games)
 
+@app.route('/admin/game/deleteXbox', methods=['POST'])
+def admin_multiplayer_delete_xbox():
+    try:
+# Bulk delete
+        deleted_count = Game.query.filter_by(platform="Xbox").delete()
+        db.session.commit()
+        return redirect(url_for('admin_profiles'))
+    except Exception as e:
+        db.session.rollback()
+        error = f"Error deleting Xbox platform games: {str(e)}"
+        games = Game.query.all()
+        return render_template('admin_profiles.html', games=games, error=error)
+
+
 #only shows multiplayer games only on steam
 #@app.route('/admin/game/multiplayer_and_steam')
 #def admin_game_multiplayer_on_steam():

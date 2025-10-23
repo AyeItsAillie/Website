@@ -21,5 +21,12 @@ endblock%} {% block content %}
   </tr>
   {% endfor %}
 </table>
+<div>
+<form method="POST" action="{{ url_for('admin_multiplayer_delete_xbox') }}">
+<label for="platform">Delete profiles with Xbox as platform:</label>
+<button type="submit">Delete</button>
+</form>
+</div>
+<br>
 
 {% endblock %}
